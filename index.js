@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://open.spotify.com/playlist/3KbYVD1TZSwAeCdPIo99wp//';
+const nggUrl = 'https://brave.com//';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
