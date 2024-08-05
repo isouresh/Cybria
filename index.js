@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://web.snapchat.com//';
+const nggUrl = 'https://instagram.com//';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
