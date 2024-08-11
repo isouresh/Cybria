@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'artclass.site/search.html';
+const nggUrl = 'artclass.site';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
