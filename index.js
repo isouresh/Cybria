@@ -3,7 +3,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'artclass.site';
+const nggUrl = 'https://mathsspot.com';
+const nggUrl = 'https://newalgebra.com/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,7 +12,7 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'mathspott.com') {
+    if (req.headers.host === 'mathsspot.com') {
       req.headers['X-Forwarded-For'] = ''; 
       req.headers['X-Real-IP'] = '';
       req.headers['Via'] = '';
@@ -19,9 +20,7 @@ const proxy = createProxyMiddleware({
     return nggUrl;
   }
 });
-
 app.use('/', proxy);
-
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`CybriaGG is running on port ${port}`);
