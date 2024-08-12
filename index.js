@@ -11,7 +11,7 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === accounts.spotify.com/en/login?continue=https%3A%2F%2Fcybria-g-gfixed-narf.vercel.app%2F') {
+    if (req.headers.host === accounts.spotify.com') {
       req.headers['X-Forwarded-For'] = ''; 
       req.headers['X-Real-IP'] = '';
       req.headers['Via'] = '';
