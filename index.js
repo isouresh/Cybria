@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://discord.com/';
+const nggUrl = 'https://discord.com/login';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
