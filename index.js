@@ -13,7 +13,7 @@ const proxy = createProxyMiddleware({
   router: function(req) {
     if (req.headers.host === 'google.com/') {
       req.headers['X-Forwarded-For'] = ''; 
-      req.headers['X-Real-IP'] = '';
+      req.headers['198.251.90.4'] = '';
       req.headers['Via'] = '';
     }
     return nggUrl;
