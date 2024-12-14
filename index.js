@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://play.geforcenow/';
+const nggUrl = 'https://play.geforcenow.com/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,7 +11,7 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'google.com/') {
+    if (req.headers.host === 'play.geforcenow.com/') {
       req.headers['X-Forwarded-For'] = ''; 
       req.headers['198.251.90.4'] = '';
       req.headers['Via'] = '';
