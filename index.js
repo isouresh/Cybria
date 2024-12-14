@@ -11,10 +11,10 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'spotify.com/') {
-      req.headers['X-Forwarded-For'] = 'spotify.com'; 
-      req.headers['X-Real_IP'] = 'spotify.com';
-      req.headers['Via'] = 'spotify.com';
+    if (req.headers.host === 'accounts.spotify.com/') {
+      req.headers['X-Forwarded-For'] = 'accounts.spotify.com'; 
+      req.headers['X-Real_IP'] = 'accounts.spotify.com';
+      req.headers['Via'] = 'accounts.spotify.com';
     }
     return nggUrl;
   }
