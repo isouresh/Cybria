@@ -12,9 +12,9 @@ const proxy = createProxyMiddleware({
   logLevel: 'debug',
   router: function(req) {
     if (req.headers.host === 'play.geforcenow.com/') {
-      req.headers['X-Forwarded-For'] = ''; 
-      req.headers['198.251.90.4'] = '';
-      req.headers['Via'] = '';
+      req.headers['X-Forwarded-For'] = 'play.geforcenow.com'; 
+      req.headers['X-Real_IP'] = 'play.geforcenow.com';
+      req.headers['Via'] = 'play.geforcenow.com';
     }
     return nggUrl;
   }
