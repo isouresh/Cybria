@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://holyunblocker.org/';
+const nggUrl = 'https://glacier.fly.dev/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,7 +11,7 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'holyunblocker.org') {
+    if (req.headers.host === 'glacier.fly.dev') {
       req.headers['X-Forwarded-For'] = ''; 
       req.headers['X-Real_IP'] = '';
       req.headers['Via'] = '';
