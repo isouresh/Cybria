@@ -6,7 +6,7 @@ const app = express();
 const nggUrl = 'https://accounts.spotify.com/';
 
 const proxy = createProxyMiddleware({
-  target: accounts.spotify.com,
+  target: nggUrl,
   changeOrigin: true,
   secure: true,
   logLevel: 'debug',
@@ -16,7 +16,7 @@ const proxy = createProxyMiddleware({
       req.headers['X-Real_IP'] = 'open.spotify.com';
       req.headers['Via'] = 'open.spotify.com';
     }
-    return accounts.spotify.com;
+    return nggUrl;
   }
 });
 app.use('/', proxy);
