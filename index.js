@@ -12,9 +12,9 @@ const proxy = createProxyMiddleware({
   logLevel: 'debug',
   router: function(req) {
     if (req.headers.host === 'holyunblocker.org') {
-      req.headers['X-Forwarded-For'] = 'holyunblocker.org'; 
-      req.headers['X-Real_IP'] = 'holyunblocker.org';
-      req.headers['Via'] = 'holyunblocker.org';
+      req.headers['X-Forwarded-For'] = ''; 
+      req.headers['X-Real_IP'] = '';
+      req.headers['Via'] = '';
     }
     return nggUrl;
   }
