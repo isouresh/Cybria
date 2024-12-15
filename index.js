@@ -3,9 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://accounts.spotify.com/';
-
-const nggUrl2 = 'https://accounts.spotify.com/';
+const nggUrl = 'https://holyunblocker.org/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -13,10 +11,10 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'accounts.spotify.com/') {
-      req.headers['X-Forwarded-For'] = 'accounts.spotify.com'; 
-      req.headers['X-Real_IP'] = 'open.spotify.com';
-      req.headers['Via'] = 'open.spotify.com';
+    if (req.headers.host === 'holyunblocker.org/') {
+      req.headers['X-Forwarded-For'] = 'holyunblocker.org'; 
+      req.headers['X-Real_IP'] = holyunblocker.org';
+      req.headers['Via'] = 'holyunblocker.org';
     }
     return nggUrl;
   }
