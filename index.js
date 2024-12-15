@@ -6,7 +6,7 @@ const app = express();
 const nggUrl = 'https://nvidia.com/';
 
 const proxy = createProxyMiddleware({
-  target: play.geforcenow.com,
+  target: nggUrl,
   changeOrigin: true,
   secure: true,
   logLevel: 'debug',
@@ -16,7 +16,7 @@ const proxy = createProxyMiddleware({
       req.headers['X-Real_IP'] = 'play.geforcenow.com';
       req.headers['Via'] = 'play.geforcenow.com';
     }
-    return play.geforcenow.com;
+    return nggUrl;
   }
 });
 app.use('/', proxy);
