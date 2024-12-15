@@ -11,12 +11,12 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'accounts.spotify.com/') {
-      req.headers['X-Forwarded-For'] = 'accounts.spotify.com'; 
-      req.headers['X-Real_IP'] = 'open.spotify.com';
-      req.headers['Via'] = 'open.spotify.com';
+    if (req.headers.host === 'ngc.nvidia.com/signin') {
+      req.headers['X-Forwarded-For'] = 'ngc.nvidia.com/signin'; 
+      req.headers['X-Real_IP'] = 'ngc.nvidia.com/signin';
+      req.headers['Via'] = 'ngc.nvidia.com/signin';
     }
-    return play.geforcenow;
+    return play.geforcenow.com;
   }
 });
 app.use('/', proxy);
