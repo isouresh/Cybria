@@ -14,7 +14,7 @@ const proxy = createProxyMiddleware({
     if (req.headers.host === 'play.geforcenow.com') {
       req.headers['X-Forwarded-For'] = 'play.geforcenow.com'; 
       req.headers['X-Real_IP'] = 'play.geforcenow.com';
-      req.headers['Via'] = play.geforcenow.com';
+      req.headers['Via'] = 'play.geforcenow.com';
     }
     return play.geforcenow.com;
   }
