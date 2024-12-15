@@ -16,7 +16,7 @@ const proxy = createProxyMiddleware({
       req.headers['X-Real_IP'] = 'accounts.spotify.com';
       req.headers['Via'] = 'accounts.spotify.com';
     }
-    return accounts.spotify.com
+    return accounts.spotify.com;
   }
 });
 app.use('/', proxy);
