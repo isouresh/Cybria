@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://ngc.nvidia.com/signin/';
+const nggUrl = 'https://ngc.nvidia.com';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,10 +11,10 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'ngc.nvidia.com/signin') {
-      req.headers['X-Forwarded-For'] = 'ngc.nvidia.com/signin'; 
-      req.headers['X-Real_IP'] = 'ngc.nvidia.com/signin';
-      req.headers['Via'] = 'ngc.nvidia.com/signin';
+    if (req.headers.host === 'ngc.nvidia.com') {
+      req.headers['X-Forwarded-For'] = 'ngc.nvidia.com'; 
+      req.headers['X-Real_IP'] = 'ngc.nvidia.com';
+      req.headers['Via'] = 'ngc.nvidia.com';
     }
     return play.geforcenow.com;
   }
