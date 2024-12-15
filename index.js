@@ -5,7 +5,7 @@ const app = express();
 
 const nggUrl = 'https://accounts.spotify.com/';
 
-const nggUrl2 = 'https://https://accounts.spotify.com/en/status?flow_ctx=ad5db26a-eae2-4fe6-a211-208c021a557e%3A1734261584/';
+const nggUrl2 = 'https://accounts.spotify.com/en/status?flow_ctx=ad5db26a-eae2-4fe6-a211-208c021a557e%3A1734261584/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
