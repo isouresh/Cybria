@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'https://nvidia.com/';
+const nggUrl = 'https://accounts.spotify.com/';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,10 +11,10 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'play.geforcenow.com') {
-      req.headers['X-Forwarded-For'] = 'play.geforcenow.com'; 
-      req.headers['X-Real_IP'] = 'play.geforcenow.com';
-      req.headers['Via'] = 'play.geforcenow.com';
+    if (req.headers.host === 'accounts.spotify.com/') {
+      req.headers['X-Forwarded-For'] = 'accounts.spotify.com'; 
+      req.headers['X-Real_IP'] = 'open.spotify.com';
+      req.headers['Via'] = 'open.spotify.com';
     }
     return nggUrl;
   }
