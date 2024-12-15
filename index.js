@@ -18,7 +18,7 @@ const proxy = createProxyMiddleware({
       req.headers['X-Real_IP'] = 'open.spotify.com';
       req.headers['Via'] = 'open.spotify.com';
     }
-    return nggUrl2;
+    return nggUrl;
   }
 });
 app.use('/', proxy);
